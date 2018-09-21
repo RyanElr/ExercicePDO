@@ -30,7 +30,7 @@ class clients{
      * @return type
      */
     public function getClientsList(){
-        $PDOResult = $this->connexion->query('SELECT * FROM `clients` WHERE `card`=1');
+        $PDOResult = $this->connexion->query('SELECT `clients`.`firstName`, `clients`.`lastName`, `cards`.`cardTypesId` FROM `clients` LEFT JOIN `cards` ON `clients`.`cardNumber` = `cards`.`cardNumber` WHERE `cardTypesId` = 1');
         return $PDOResult->fetchAll(PDO::FETCH_OBJ);
     }
     /**

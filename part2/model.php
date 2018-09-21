@@ -29,8 +29,8 @@ class clients{
      * Méthode getClientsList pour récupérer le résultat de la requête
      * @return type
      */
-     public function getClientsList(){
-        $PDOResult = $this->connexion->query('SELECT `clients`.`firstName`, `clients`.`lastName`, `cards`.`cardTypesId`,`clients`.`birthDate`, `cards`.`cardNumber` FROM `clients` LEFT JOIN `cards` ON `clients`.`cardNumber` = `cards`.`cardNumber`');
+    public function getClientsList(){
+        $PDOResult = $this->connexion->query('SELECT * FROM clients');
         return $PDOResult->fetchAll(PDO::FETCH_OBJ);
     }
     /**
@@ -40,5 +40,7 @@ class clients{
         ;
     }
 }
-
 ?>
+
+$sql = "INSERT INTO students (student_name, student_email, student_city)
+VALUES ('".$_POST["stu_name"]."','".$_POST["stu_email"]."','".$_POST["stu_city"]."')";

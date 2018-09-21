@@ -32,6 +32,7 @@ text-align:center;
 }
 
 #new{
+    background-color: black;
     color :white;
     box-shadow: 0.5px 0.5px #001a33, 0.5em 0 0.7em #001a33, -0.5em 0 0.7em #001a33;
 }

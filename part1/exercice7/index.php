@@ -38,13 +38,16 @@ include'controller.php';
                                     <td><?= $clientDetail->firstName ?></td>
                                     <td><?= $clientDetail->birthDate ?></td>
                                     <td><?php
-                                        if ($clientDetail->card == 0) {
-                                            echo 'Non';
-                                        } else {
+                                        if ($clientDetail->cardTypesId == 1) {
                                             echo 'Oui';
+                                        } else {
+                                            echo 'Non';
                                         }
                                         ?></td>
-                                    <td><?= $clientDetail->cardNumber ?></td
+                                    <td><?php
+                                        if ($clientDetail->cardTypesId == 1) {
+                                            echo $clientDetail->cardNumber;
+                                        };?></td>
 
                                 </tr>
                             <?php } ?>

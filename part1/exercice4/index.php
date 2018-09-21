@@ -24,19 +24,16 @@
                     <table class="col-12 text-center">
                         <thead>
                             <tr>
-                                <th>Client N°</th>
                                 <th>Nom</th>
                                 <th>Prénom</th>
-                                <th>Numéro de la carte</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($clientList as $clientDetail){ ?>
                             <tr>
-                                <td><?= $clientDetail->id ?></td>
+                                
                                 <td><?= $clientDetail->lastName ?></td>
                                 <td><?= $clientDetail->firstName ?></td>
-                                <td><?= $clientDetail->cardNumber ?></td>
                             </tr>
                             <?php } ?>
                         </tbody>
