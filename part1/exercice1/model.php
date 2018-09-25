@@ -30,8 +30,15 @@ class clients{
      * @return type
      */
     public function getClientsList(){
-        $PDOResult = $this->connexion->query('SELECT `lastName`, `firstName` FROM `clients`');
-        return $PDOResult->fetchAll(PDO::FETCH_OBJ);
+        $isObjectResult = array();
+        $PDOResult = $this->connexion->query('SELECT `lastName`, `firstName`, `id` FROM `clients`');
+        // Vérifie que $PDOResult est un objet
+        if (is_object($PDOResult)) {
+          // Stocke la requête dans $PDOResult
+          $isObjectResult = $PDOResult->fetchAll(PDO::FETCH_OBJ);
+        }
+        // Retourne $PDOResult
+        return $isObjectResult;
     }
     /**
      * Méthode destruct

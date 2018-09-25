@@ -30,8 +30,19 @@ class clients{
      * @return type
      */
     public function getClientsList(){
-        $PDOResult = $this->connexion->query('SELECT `clients`.`firstName`, `clients`.`lastName`, `cards`.`cardTypesId` FROM `clients` LEFT JOIN `cards` ON `clients`.`cardNumber` = `cards`.`cardNumber` WHERE `cardTypesId` = 1');
-        return $PDOResult->fetchAll(PDO::FETCH_OBJ);
+        $isObjectResult = array();
+        $PDOResult = $this->connexion->query('SELECT `clients`.`firstName`, `clients`.`lastName`, `cards`.`cardTypesId`, `clients`.`id`'
+                . ' FROM `clients` '
+                . 'INNER JOIN `cards` '
+                . 'ON `clients`.`cardNumber` = `cards`.`cardNumber` '
+                . 'WHERE `cards`.`cardTypesId` = 1');
+        // Vérifie que $PDOResult est un objet
+        if (is_object($PDOResult)) {
+          // Stocke la requête dans $PDOResult
+          $isObjectResult = $PDOResult->fetchAll(PDO::FETCH_OBJ);
+        }
+        // Retourne $PDOResult
+        return $isObjectResult;
     }
     /**
      * Méthode destruct

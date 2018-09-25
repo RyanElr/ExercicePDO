@@ -25,6 +25,10 @@ td{
     font-style: italic;
     box-shadow: 0.5px 0.5px red, 0.5em 0 0.7em red, -0.5em 0 0.7em red;
 }
+.nav-link:hover{
+    background-color: white ;
+    color : red;
+}
 #new{
     background-color: black;
     color : white;

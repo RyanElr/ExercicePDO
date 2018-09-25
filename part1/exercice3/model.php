@@ -26,12 +26,18 @@ class clients{
         }
     }
     /**
-     * Méthode getClientsList pour récupérer le résultat de la requête
-     * @return type
+     * Méthode getClientsList pour récupérer le résultat de la requête limité à 20.
      */
-    public function getClientsList(){
+public function getClientsList(){
+        $isObjectResult = array();
         $PDOResult = $this->connexion->query('SELECT * FROM `clients` LIMIT 20');
-        return $PDOResult->fetchAll(PDO::FETCH_OBJ);
+        // Vérifie que $PDOResult est un objet
+        if (is_object($PDOResult)) {
+          // Stocke la requête dans $PDOResult
+          $isObjectResult = $PDOResult->fetchAll(PDO::FETCH_OBJ);
+        }
+        // Retourne $PDOResult
+        return $isObjectResult;
     }
     /**
      * Méthode destruct

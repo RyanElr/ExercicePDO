@@ -27,6 +27,10 @@ th{
     font-style: italic;
     box-shadow: 0.5px 0.5px #004080, 0.5em 0 0.7em #004080, -0.5em 0 0.7em #004080;
 }
+.nav-link:hover{
+    background-color: white ;
+    color : #004080;
+}
 
 #new{
     background-color: black;

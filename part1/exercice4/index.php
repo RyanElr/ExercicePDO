@@ -24,6 +24,7 @@
                     <table class="col-12 text-center">
                         <thead>
                             <tr>
+                                <th>Client N°</th>
                                 <th>Nom</th>
                                 <th>Prénom</th>
                             </tr>
@@ -31,7 +32,7 @@
                         <tbody>
                             <?php foreach($clientList as $clientDetail){ ?>
                             <tr>
-                                
+                                <td><?= $clientDetail->id ?></td>
                                 <td><?= $clientDetail->lastName ?></td>
                                 <td><?= $clientDetail->firstName ?></td>
                             </tr>

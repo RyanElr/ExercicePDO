@@ -1,4 +1,8 @@
 <?php
+$client = NEW clients();
+$clientList = $client->getClientsList();
+
+
 //Déclaration des regex
 //Déclaration regex numéro de téléphone
 $regexPhoneNumber = '/^[0-9]{10}$/';
@@ -38,40 +42,13 @@ if (isset($_POST['firstName'])) {
         $formError['firstName'] = 'Champ obligatoire.';
     }
 }
-if (isset($_POST['dateOfBirth'])) {
-    $dateOfBirth = htmlspecialchars($_POST['dateOfBirth']);
-    if (!preg_match($regexDate, $dateOfBirth)) {
-        $formError['dateOfBirth'] = 'Saisie invalide.';
+if (isset($_POST['birthDate'])) {
+    $birthDate = htmlspecialchars($_POST['birthDate']);
+    if (!preg_match($regexDate, $birthDate)) {
+        $formError['birthDate'] = 'Saisie invalide.';
     }
-    if (empty($dateOfBirth)) {
-        $formError['dateOfBirth'] = 'Champ obligatoire.';
-    }
-}
-if (isset($_POST['countryOfBirth'])) {
-    $countryOfBirth = htmlspecialchars($_POST['countryOfBirth']);
-    if (!preg_match($regexName, $countryOfBirth)) {
-        $formError['countryOfBirth'] = 'Saisie invalide.';
-    }
-    if (empty($countryOfBirth)) {
-        $formError['countryOfBirth'] = 'Champ obligatoire.';
-    }
-}
-if (isset($_POST['nationality'])) {
-    $nationality = htmlspecialchars($_POST['nationality']);
-    if (!preg_match($regexName, $nationality)) {
-        $formError['nationality'] = 'Saisie invalide.';
-    }
-    if (empty($nationality)) {
-        $formError['nationality'] = 'Champ obligatoire.';
-    }
-}
-if (isset($_POST['address'])) {
-    $address = htmlspecialchars($_POST['address']);
-    if (!preg_match($regexAddress, $address)) {
-        $formError['address'] = 'Saisie invalide.';
-    }
-    if (empty($address)) {
-        $formError['address'] = 'Champ obligatoire.';
+    if (empty($birthDate)) {
+        $formError['birthDate'] = 'Champ obligatoire.';
     }
 }
 if (isset($_POST['mail'])) {

@@ -9,8 +9,8 @@ class clients{
     public $lastName;
     public $firstName;
     public $birthDate;
-    public $card;
-    public $cardNumber; 
+    public $mail; 
+    public $phone; 
     /**
      * Méthode construct
      */
@@ -18,20 +18,30 @@ class clients{
         //On test les erreurs avec le try/catch 
         //Si tout est bon, on est connecté à la base de donnée
         try{
-            $this->connexion = new PDO('mysql:host=localhost;dbname=colyseum;charset=utf8', 'root', 'c8fwdxwh');
+            $this->connexion = new PDO('mysql:host=localhost;dbname=hospitalE2N;charset=utf8', 'root', 'c8fwdxwh');
         }
         //Autrement, un message d'erreur est affiché
         catch(Exception $e){
             die($e->getMessage());
         }
     }
+      $PDOResult = $dbh->prepare('SELECT `lastName`, `firstName`, `birthDate`, `mail`, `phone` FROM `patients`')
     /**
      * Méthode getClientsList pour récupérer le résultat de la requête
      * @return type
      */
-    public function getClientsList(){
-        $PDOResult = $this->connexion->query('SELECT * FROM clients');
-        return $PDOResult->fetchAll(PDO::FETCH_OBJ);
+public function getClientsList(){
+        $isObjectResult = array();
+        $PDOResult = $this->connexion->query("'INSERT INTO patients (lastName, firstName, birthDate, mail, phone )
+VALUES (':lastName,:firstName, :birthDate, :mail, :phone'");
+      
+        // Vérifie que $PDOResult est un objet
+        if (is_object($PDOResult)) {
+          // Stocke la requête dans $PDOResult
+          $isObjectResult = $PDOResult->fetchAll(PDO::FETCH_OBJ);
+        }
+        // Retourne $PDOResult
+        return $isObjectResult;
     }
     /**
      * Méthode destruct
@@ -41,6 +51,3 @@ class clients{
     }
 }
 ?>
-
-$sql = "INSERT INTO students (student_name, student_email, student_city)
-VALUES ('".$_POST["stu_name"]."','".$_POST["stu_email"]."','".$_POST["stu_city"]."')";

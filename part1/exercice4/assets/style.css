@@ -18,17 +18,21 @@ td{
     vertical-align: top;
 }
 #clients{ 
-text-align:center;
-      box-shadow: 0.5px 0.5px black, 0.5em 0 0.7em black, -0.5em 0 0.7em black;
+    text-align:center;
+    box-shadow: 0.5px 0.5px black, 0.5em 0 0.7em black, -0.5em 0 0.7em black;
     color: white;
 }
 .nav-link{
-     box-shadow: 0.5px 0.5px #bb99ff, 0.5em 0 0.7em #bb99ff, -0.5em 0 0.7em #bb99ff;
+    box-shadow: 0.5px 0.5px #bb99ff, 0.5em 0 0.7em #bb99ff, -0.5em 0 0.7em #bb99ff;
     background-color: black;
     font-size: 20px;
-     color :white;
+    color :white;
     font-style: italic;
-    
+
+}
+.nav-link:hover{
+    background-color: white;
+    color: #bb99ff;
 }
 #new{
     background-color: black;

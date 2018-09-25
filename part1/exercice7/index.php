@@ -47,8 +47,8 @@ include'controller.php';
                                     <td><?php
                                         if ($clientDetail->cardTypesId == 1) {
                                             echo $clientDetail->cardNumber;
-                                        };?></td>
-
+                                        };
+                                        ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>

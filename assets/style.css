@@ -7,7 +7,7 @@ table, th, td{
 
     background-color: #F2F2F2;
     text-align: center;
-    box-shadow: 0.5px 0.5px #001a33, 0.5em 0 0.7em #001a33, -0.5em 0 0.7em #001a33;
+    box-shadow: 0.5px 0.5px blueviolet, 0.5em 0 0.7em blueviolet, -0.5em 0 0.7em blueviolet;
     color: black;
 
 }
@@ -20,22 +20,20 @@ td{
 }
 #clients{ 
 text-align:center;
-     box-shadow: 0.5px 0.5px #001a33, 0.5em 0 0.7em #001a33, -0.5em 0 0.7em #001a33;
+      box-shadow: 0.5px 0.5px blueviolet, 0.5em 0 0.7em blueviolet, -0.5em 0 0.7em blueviolet;
     color: white;
 }
 .nav-link{
     background-color: black;
     font-size: 20px;
+    box-shadow: 0.5px 0.5px blueviolet, 0.5em 0 0.7em blueviolet, -0.5em 0 0.7em blueviolet;
     color : whitesmoke;
     font-style: italic;
-    box-shadow: 0.5px 0.5px #001a33, 0.5em 0 0.7em #001a33, -0.5em 0 0.7em #001a33;
+    
 }
-.nav-link:hover{
-    background-color: white;
-    color: #001a33;
-}
+
 #new{
     background-color: black;
     color :white;
-    box-shadow: 0.5px 0.5px #001a33, 0.5em 0 0.7em #001a33, -0.5em 0 0.7em #001a33;
+    box-shadow: 0.5px 0.5px blueviolet, 0.5em 0 0.7em blueviolet, -0.5em 0 0.7em blueviolet;
 }

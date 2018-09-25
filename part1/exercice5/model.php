@@ -27,10 +27,9 @@ class clients{
     }
     /**
      * Méthode getClientsList pour récupérer le résultat de la requête
-     * @return type
      */
     public function getClientsList(){
-        $PDOResult = $this->connexion->query("SELECT * FROM `clients` WHERE `lastName` LIKE'M%'");
+        $PDOResult = $this->connexion->query('SELECT * FROM `clients` WHERE `lastName` LIKE\'M%\' ORDER BY `lastName` ASC');
         return $PDOResult->fetchAll(PDO::FETCH_OBJ);
     }
     /**

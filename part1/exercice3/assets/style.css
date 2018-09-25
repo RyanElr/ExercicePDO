@@ -29,7 +29,10 @@ text-align:center;
     font-style: italic;
     box-shadow: 0.5px 0.5px orangered, 0.5em 0 0.7em orangered, -0.5em 0 0.7em orangered;
 }
-
+.nav-link:hover{
+    background-color: white ;
+    color : orangered;
+}
 #new{
     background-color: black;
     color :white;
